@@ -1,69 +1,80 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+const paidServices = [
+  { name: "Phone Research", price: "$10", detail: "Research that requires phone calls or direct inquiries." },
+  { name: "Itinerary Planning & Support", price: "$20 / day", detail: "A tailored itinerary and practical travel guidance." },
+  { name: "In-Person Research", price: "$100 + travel expenses", detail: "On-site research or visits carried out on your behalf." },
+  { name: "Real-Time Travel Support", price: "$30 / case or $50 / day", detail: "Help while you are travelling in Japan." },
+  { name: "Custom Support", price: "Quote on request", detail: "Tell us what you need and we will discuss a suitable plan." },
+];
+
+const topics = [
+  { number: "01", title: "Culture & Etiquette", text: "Understand customs, social expectations, and everyday manners." },
+  { number: "02", title: "Daily Life", text: "Get help with local rules, shopping, transport, and practical questions." },
+  { number: "03", title: "Travel & Local Areas", text: "Explore destinations, local highlights, and ways to make the most of your trip." },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <section className="hero">
+        <div className="hero-pattern" aria-hidden="true" />
+        <div className="container hero-content">
+          <p className="eyebrow"><span /> DISCOVER JAPAN, ONE QUESTION AT A TIME</p>
+          <h1>Make Japan feel<br /><span>closer to you.</span></h1>
+          <p className="hero-copy">Culture, daily life, and travel. Ask us what you want to know about Japan.</p>
+          <div className="hero-actions">
+            <Link className="button button-primary" href="/services/ask">Ask a free question <span aria-hidden="true">↗</span></Link>
+            <a className="text-link" href="#pricing">Explore our services <span aria-hidden="true">↓</span></a>
+          </div>
+          <div className="hero-stamp" aria-hidden="true"><span>日本</span><small>DISCOVER</small></div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="hero-bottom-line"></div>
+      </section>
+
+      <section className="section intro-section" id="about">
+        <div className="container intro-grid">
+          <div><p className="section-kicker">ABOUT ASK JAPAN</p><h2>Start with a question.<br />Discover more of Japan.</h2></div>
+          <div className="intro-copy">
+            <p>Whether you live in Japan or are planning your first visit, we help you explore the things you may not find easy to look up yourself.</p>
+            <p>Ask Japan offers friendly, practical answers about Japan, with optional research and travel support when you need more than an email reply.</p>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="section topics-section">
+        <div className="container">
+          <div className="section-heading"><div><p className="section-kicker">WHAT YOU CAN EXPLORE</p><h2>What would you like to know?</h2></div><span className="heading-note">Curiosity starts here.</span></div>
+          <div className="topic-grid">
+            {topics.map((topic) => <article className="topic-card" key={topic.number}><span className="topic-number">{topic.number}</span><div className="topic-symbol" aria-hidden="true">{topic.number === "01" ? "結" : topic.number === "02" ? "日" : "旅"}</div><h3>{topic.title}</h3><p>{topic.text}</p><Link href="/services/ask">Ask a question <span aria-hidden="true">↗</span></Link></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="section pricing-section" id="pricing">
+        <div className="container">
+          <div className="section-heading pricing-heading"><div><h2>Free questions or tailored support</h2></div><p className="pricing-disclaimer">Prices are listed in USD. Travel expenses and any custom scope will be confirmed before work begins.</p></div>
+          <div className="pricing-grid">
+            <article className="price-card">
+              <p className="plan-label">START HERE</p><h3>Free</h3><p className="plan-price">$0</p><p className="plan-detail">For simple questions that can be answered by email.</p><div className="price-rule" />
+              <ul><li><span>✓</span>Simple questions about Japan</li><li><span>✓</span>Research that does not involve direct contact or visits</li><li><span>✓</span>Questions about our paid services</li><li><span>✓</span>Email replies only</li></ul>
+              <Link className="button button-primary" href="/services/ask">Request a free question <span aria-hidden="true">↗</span></Link>
+            </article>
+            <article className="price-card price-card-featured">
+              <p className="plan-label">GO FURTHER</p><h3>Paid Services</h3><p className="plan-price">From $10</p><p className="plan-detail">For deeper research, planning, and support on the ground.</p><div className="price-rule" />
+              <ul>{paidServices.map((service) => (
+                <li key={service.name}>
+                  <span>✓</span>
+                  <span><strong>{service.name} — {service.price}</strong>
+                  <small className="price-feature-detail">{service.detail}</small>
+                  </span></li>)
+                )}</ul>
+              <p className="pricing-note">Need more than one service? Discounts may be available for combined requests. Rush fees may apply to urgent requests and will be confirmed before you commit.</p>
+              <Link className="button button-primary" href="/services/request">Request paid support <span aria-hidden="true">↗</span></Link>
+            </article>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
