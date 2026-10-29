@@ -289,7 +289,7 @@ button { font: inherit; }
 .contact-panel { max-width: 650px; margin: auto; text-align: center; padding: 10px 0 30px; }
 .contact-icon { width: 64px; height: 64px; display: grid; place-items: center; margin: 0 auto 20px; border: 1px solid #d9cfc0; border-radius: 50%; color: var(--vermillion); font-size: 26px; }
 .contact-panel h2 { color: var(--indigo); font-size: 24px; }
-.contact-panel p { color: var(--muted); font-size: 13px; margin: 15px auto 28px; max-width: 520px; }
+.contact-panel p { color: var(--muted); font-size: 15px; margin: 15px auto 28px; max-width: 520px; }
 
 @media (max-width: 800px) {
   .container, .header-inner, .footer-inner { width: min(100% - 36px, 640px); }
