@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const paidServices = [
   { name: "Phone Research", price: "$10", detail: "Research that requires phone calls or direct inquiries." },
-  { name: "LocalRecommendations", price: "$10 / day", detail: "Advice for local attractions, restaurants, and so on." },
+  { name: "Local Recommendations", price: "$10 / day", detail: "Advice for local attractions, restaurants, and so on." },
   { name: "Transportation Support", price: "$10 / day", detail: "Support for trains, buses, and other means." },
   { name: "Custom Support", price: "Quote on request", detail: "Tell us what you need and we will discuss a suitable plan." },
 ];

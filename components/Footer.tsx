@@ -11,8 +11,9 @@ const links = [
 
 export default function Footer() {
   return <footer className="site-footer"><div className="footer-inner">
-    <div className="footer-brand-block"><Link className="brand footer-brand" href="/"><span className="brand-mark" aria-hidden="true">和</span><span className="brand-name">Ask Japan</span></Link><p>Discover Japan, one question at a time.</p><p className="footer-description">Practical answers about life, culture, and travel in Japan — with tailored research and travel support when you need it.</p></div>
+    <div className="footer-brand-block"><Link className="brand footer-brand" href="/"><span className="brand-mark" aria-hidden="true">和</span><span className="brand-name">Ask Japan</span></Link><p>Your questions about Japan,
+Answered.</p><p className="footer-description">Practical answers about life, culture, and travel in Japan — with tailored research and support when you need it.</p></div>
     <nav className="footer-links" aria-label="Footer navigation">{links.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}</nav>
-    <div className="footer-bottom"><span>© 2026 Ask Japan</span><span>Made with care in Japan</span></div>
+    <div className="footer-bottom"><span>© 2026 Ask Japan</span></div>
   </div></footer>;
 }
