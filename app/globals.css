@@ -265,7 +265,7 @@ button { font: inherit; }
 .subpage-hero { position: relative; overflow: hidden; background: var(--paper-deep); padding: 76px 0 82px; }
 .subpage-hero .container { position: relative; }
 .subpage-hero h1 { color: var(--indigo-deep); font-size: clamp(36px, 5vw, 56px); line-height: 1.4; margin: 0 0 16px; }
-.subpage-hero p:not(.section-kicker) { color: var(--muted); font-size: 14px; max-width: 580px; }
+.subpage-hero p:not(.section-kicker) { color: var(--muted); font-size: 15px; max-width: 580px; }
 .subpage-decoration { position: absolute; right: 8%; top: 0; color: #b84d3d12; font-size: 190px; font-weight: 800; line-height: 1; }
 .service-content { display: grid; grid-template-columns: .8fr 1.2fr; gap: 75px; }
 .service-copy { color: var(--muted); font-size: 14px; }
@@ -274,7 +274,11 @@ button { font: inherit; }
 .steps-list li > span { color: var(--vermillion); font-family: Georgia, serif; font-size: 18px; }
 .steps-list strong { color: var(--indigo); font-size: 15px; }
 .steps-list p { font-size: 12px; margin: 4px 0 0; }
-.notice-box { border-left: 3px solid var(--vermillion); background: #f2ede3; color: #596675; font-size: 12px; padding: 16px 18px; margin: 25px 0; }
+.notice-box { border-left: 3px solid var(--vermillion); background: #f2ede3; color: #596675; font-size: 15px; padding: 16px 18px; margin: 25px 0; }
+.notice-box li {
+  list-style-type: disc;
+  margin-left: 2em;
+}
 .policy-page {
   max-width: 850px;
   padding-top: 70px;
@@ -483,7 +487,7 @@ button { font: inherit; }
 .form-card input:not([type="checkbox"]), .form-card textarea { display: block; width: 100%; border: 1px solid #d8dfe5; border-radius: 4px; background: #fff; padding: 12px 13px; color: var(--ink); font: inherit; font-size: 14px; outline-offset: 2px; }
 .form-card textarea { resize: vertical; min-height: 100px; }
 .form-card input:focus, .form-card textarea:focus { border-color: var(--indigo); outline: 2px solid #233c5a1c; }
-.form-hint { color: var(--muted); font-size: 11px; line-height: 1.6; margin: 8px 0; }
+.form-hint { color: var(--muted); font-size: 13px; line-height: 1.6; margin: 8px 0; }
 .form-submit { width: 100%; justify-content: center; margin-top: 20px; cursor: pointer; border: 0; }
 .form-card .button { cursor: pointer; }
 .service-options { border: 0; padding: 0; margin: 26px 0 10px; }
@@ -494,7 +498,7 @@ button { font: inherit; }
 .service-option-main input, .rush-option input { accent-color: var(--vermillion); width: 17px; height: 17px; margin-top: 4px; flex: 0 0 auto; }
 .service-option-main > span { flex: 1; }
 .service-option-main strong, .rush-option strong { display: block; color: var(--indigo); font-size: 13px; }
-.service-option-main small, .rush-option small { display: block; color: var(--muted); font-size: 11px; line-height: 1.55; margin-top: 3px; }
+.service-option-main small, .rush-option small { display: block; color: var(--muted); font-size: 12px; line-height: 1.55; margin-top: 3px; }
 .service-option-main b { color: var(--vermillion); font-size: 12px; text-align: right; }
 .service-detail-input { padding: 0 0 2px 29px; }
 .service-detail-input .field-label { font-size: 11px; }
